@@ -18,7 +18,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 let mapleader = ","
 
 " Turn on line numbers
-set number
+set relativenumber
 
 " Indent the next line similiar to current line
 set autoindent
@@ -30,12 +30,23 @@ set expandtab
 set shiftwidth=4
 " Round all indentations to multiple of shiftwidth
 set shiftround
+" Set tabs to be equivalent to 4 spaces (fixes retab)
+set tabstop=4
 
 " Long lines handling
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80,100
+
+" Display ruler with current possition
+set ruler
+
+" Display statusline
+set laststatus=2
+
+" Set how many lines that should be displayed above/under cursor
+set scrolloff=7
 
 " Show hidden unwanted characters
 set list
@@ -59,11 +70,15 @@ set history=1000
 set undolevels=1000
 
 " Create undo files
-set undofile
+"set undofile
 
 " Don't create backup or swap files
 set nobackup
 set noswapfile
+
+" Enable wildmenu (inline file explorer in command line)
+set wildmenu
+set wildmode=list:longest,full
 
 " Update window title with path to open file
 set title
@@ -77,7 +92,14 @@ map <S-h> gT
 map <S-l> gt
 
 " Toggle line numbers on/off
-map <leader>l :set number!<CR>
+map <leader>l :call ToggleLineNumberingStyle()<CR>
+function! ToggleLineNumberingStyle()
+    if &number
+        set relativenumber
+    else
+        set number
+    endif
+endfunction
 
 " Toggle paste mode
 map <leader>p :set invpaste<CR>
