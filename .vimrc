@@ -8,8 +8,14 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax enable
 
+" Load pathogen
+call pathogen#infect()
+
 " Remove all unwanted whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Rebind <leader>
+let mapleader = ","
 
 " Turn on line numbers
 set number
@@ -71,13 +77,15 @@ map <S-h> gT
 map <S-l> gt
 
 " Toggle line numbers on/off
-map <F4> :set number!<CR>
+map <leader>l :set number!<CR>
 
 " Toggle paste mode
-map <F2> :set invpaste<CR>
+map <leader>p :set invpaste<CR>
 
-" Load pathogen
-call pathogen#infect()
+" Bindings for phpDocumentor
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 " Configure solarized to 256 color terminal with dark background
 set background=dark
