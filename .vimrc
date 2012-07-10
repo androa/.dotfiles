@@ -76,6 +76,9 @@ map <F4> :set number!<CR>
 " Toggle paste mode
 map <F2> :set invpaste<CR>
 
+" Load pathogen
+call pathogen#infect()
+
 " Configure solarized to 256 color terminal with dark background
 set background=dark
 set t_Co=256

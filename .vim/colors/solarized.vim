@@ -1,0 +1,1 @@
+/home/andrer/vim-colors-solarized/colors/solarized.vim
