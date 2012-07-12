@@ -12,6 +12,7 @@ syntax enable
 call pathogen#infect()
 
 " Remove all unwanted whitespaces on save
+autocmd BufWritePre * :%s/\r\+$//e " Windows newlines
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Rebind <leader>
@@ -105,7 +106,7 @@ endfunction
 map <leader>p :set invpaste<CR>
 
 " Bindings for phpDocumentor
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR>
 
