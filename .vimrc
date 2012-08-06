@@ -92,6 +92,9 @@ set noerrorbells
 map <S-h> gT
 map <S-l> gt
 
+" Replace a word with last yanked text
+nmap <leader>r "_diwP
+
 " Toggle line numbers on/off
 map <leader>l :call ToggleLineNumberingStyle()<CR>
 function! ToggleLineNumberingStyle()
@@ -104,11 +107,6 @@ endfunction
 
 " Toggle paste mode
 map <leader>p :set invpaste<CR>
-
-" Bindings for phpDocumentor
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
 
 " Configure solarized to 256 color terminal with dark background
 set background=dark

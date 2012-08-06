@@ -15,8 +15,10 @@ autocmd FileType php nnoremap <C-P> :!php %<CR>
 autocmd FileType php nnoremap <C-L> :!php -l %<CR>
 autocmd FileType php nnoremap <C-U> :!phpunit %<CR>
 
-" Create docblocks
-autocmd FileType php nmap <C-d> :call JCommentWriter()<CR>
+" Bindings for phpDocumentor
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 " Set debug port for Xdebug
 let g:debuggerPort = 9108
