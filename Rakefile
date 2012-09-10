@@ -31,6 +31,7 @@ task :install do
       `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
+    puts "Setting up #{target}"
   end
 end
 
