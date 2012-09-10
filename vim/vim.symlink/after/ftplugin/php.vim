@@ -16,9 +16,9 @@ autocmd FileType php nnoremap <C-L> :!php -l %<CR>
 autocmd FileType php nnoremap <C-U> :!phpunit %<CR>
 
 " Bindings for phpDocumentor
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
+nnoremap <C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D> :call PhpDocRange()<CR>
 
 " Set debug port for Xdebug
 let g:debuggerPort = 9108
