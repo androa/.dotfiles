@@ -8,6 +8,8 @@ task :install do
   overwrite_all = false
   backup_all = false
 
+  `git submodule update --init`
+
   linkables.each do |linkable|
     overwrite = false
     backup = false
