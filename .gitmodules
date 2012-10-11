@@ -4,3 +4,6 @@
 [submodule "vim/vim.symlink/bundle/PDV--phpDocumentor-for-Vim"]
 	path = vim/vim.symlink/bundle/PDV--phpDocumentor-for-Vim
 	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "vim/vim.symlink/bundle/ctrlp"]
+	path = vim/vim.symlink/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
