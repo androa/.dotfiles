@@ -7,3 +7,6 @@
 [submodule "vim/vim.symlink/bundle/ctrlp"]
 	path = vim/vim.symlink/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/vim.symlink/checksyntax_vim"]
+	path = vim/vim.symlink/checksyntax_vim
+	url = git://github.com/tomtom/checksyntax_vim.git
