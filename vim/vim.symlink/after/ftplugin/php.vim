@@ -11,7 +11,6 @@ set foldlevel=2
 set foldcolumn=4
 
 " Binds for running PHP, lint and unittest
-autocmd FileType php nnoremap <C-P> :!php %<CR>
 autocmd FileType php nnoremap <C-L> :!php -l %<CR>
 autocmd FileType php nnoremap <C-U> :!phpunit %<CR>
 
