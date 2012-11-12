@@ -113,3 +113,8 @@ set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
