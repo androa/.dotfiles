@@ -24,4 +24,4 @@ function get_remote_paths() {
 
 # Add completion for svn command, use function for completing and don't add any
 # extra whitespaces at the end of remote path.
-complete -o nospace -F complete_remote_paths svn
+complete -o nospace -o plusdirs -F complete_remote_paths svn
