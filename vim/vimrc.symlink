@@ -118,3 +118,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>'],
     \ }
+
+" Configure PDV
+let g:pdv_cfg_Author = "André Roaldseth <andrer@vg.no>"
+let g:pdv_cfg_php4always = 0 " Turn of @access, etc
