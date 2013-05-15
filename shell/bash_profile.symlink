@@ -10,6 +10,8 @@ fi
 PATH=$PATH:$HOME/bin
 
 export PATH
+export FIGNORE=".svn"
+export HISTCONTROL="erasedups"
 
 parse_git_branch () {
   git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (\1)#'
@@ -27,4 +29,4 @@ parse_svn_repository_root() {
 export PS1="${YELLOW}\]\u${RC}\]@${GREEN}\]\h${RC}\]:\w${RED}\]\$(parse_git_branch)\$(parse_svn_branch)${RC}\]\$ "
 
 # Add tab completion for git/svn
-source ~/.bash/svn_completion_remote_paths
+#source ~/.bash/svn_completion_remote_paths
