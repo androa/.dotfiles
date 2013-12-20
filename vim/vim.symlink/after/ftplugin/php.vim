@@ -2,13 +2,13 @@
 let g:php_folding=1
 
 " Fold by syntax
-set foldmethod=syntax
+setlocal foldmethod=syntax
 
 " Only fold two levels in
-set foldlevel=2
+setlocal foldlevel=2
 
 " Use 4 columns to display nesting and folds
-set foldcolumn=4
+setlocal foldcolumn=4
 
 " Binds for running PHP, lint and unittest
 autocmd FileType php nnoremap <C-L> :!php -l %<CR>
@@ -20,4 +20,4 @@ nnoremap <C-D> :call PhpDocSingle()<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
 
 " Set debug port for Xdebug
-let g:debuggerPort = 9108
+let g:debuggerPort = 11016

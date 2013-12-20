@@ -1,3 +1,3 @@
-"set foldmethod=syntax
-"set foldlevel=2
-"set foldcolumn=4
+setlocal foldmethod=syntax
+setlocal foldlevel=2
+setlocal foldcolumn=4
