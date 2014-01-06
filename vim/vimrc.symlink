@@ -37,9 +37,9 @@ set tabstop=4
 
 " Long lines handling
 set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=80,100
+set textwidth=80
+set formatoptions=qrn1t
+set colorcolumn=+1,+20
 
 " Display ruler with current possition
 set ruler
