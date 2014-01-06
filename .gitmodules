@@ -19,3 +19,6 @@
 [submodule "vim/vim.symlink/bundle/vim-easymotion"]
 	path = vim/vim.symlink/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/vim.symlink/bundle/vim-markdown"]
+	path = vim/vim.symlink/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
