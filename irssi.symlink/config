@@ -84,7 +84,8 @@ channels = (
   { name = "#imbo"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vgeng"; chatnet = "worknet"; autojoin = "yes"; },
   { name = "#phpdocumentor"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#techshock"; chatnet = "worknet"; autojoin = "yes"; }
+  { name = "#techshock"; chatnet = "worknet"; autojoin = "yes"; },
+  { name = "#vinland"; chatnet = "worknet"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -162,7 +163,7 @@ aliases = {
   dick = "say http://i.imgur.com/L8x8kte.gif";
   nothing = "say http://i.qkme.me/3tdxrb.jpg";
   busy = "say http://i.imgur.com/b7OVExg.gif";
-  letmesee = "say http://imgur.com/gallery/5JQJV";
+  letmesee = "say http://i.imgur.com/f9EoWZj.gif";
   apetornado = "say http://i.imgur.com/NXfLcSo.gif";
   gonbgud = "say http://i.imgur.com/k095gSa.gif";
   nofucks = "say http://i.imgur.com/3PFZ1i5.gif";
@@ -236,6 +237,14 @@ aliases = {
   theking = "say http://i.imgur.com/IMj1JE0.gif";
   squarepeg = "say http://i.imgur.com/7dpx5i2.gif";
   imout = "say http://i.imgur.com/Ml9yCHj.gif";
+  selfhighfive = "say http://i.imgur.com/e5VKsjd.gif";
+  toldyou = "say http://i.imgur.com/xBuiSv2.gif";
+  fuckedup = "say http://i.imgur.com/kD15h1F.gif";
+  im12 = "say http://i1.kym-cdn.com/photos/images/newsfeed/000/069/300/1283378392883.jpg";
+  heckle = "say http://i.imgur.com/rZPFI7U.gif";
+  imout2 = "say http://i.imgur.com/utIFmyl.gif";
+  huehuehuehue = "say http://i.imgur.com/CmEog81.jpg";
+  phew = "say http://i.imgur.com/ILjgUyi.gif";
 };
 
 statusbar = {
