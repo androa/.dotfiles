@@ -72,7 +72,9 @@ set history=1000
 set undolevels=1000
 
 " Create undo files
-"set undofile
+set undofile
+set undodir=$HOME/.vim/undo
+set undoreload=10000
 
 " Don't create backup or swap files
 set nobackup
