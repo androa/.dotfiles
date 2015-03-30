@@ -6,10 +6,16 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+PATH="$HOME/bin:$PATH"
 
-PATH=$HOME/bin:$PATH
+# Override composer installed binaries from global
+PATH="./vendor/bin:$PATH"
 
-PATH=./vendor/bin:$PATH
+# Override npm installed binaries from global
+PATH="./node_modules/.bin/:$PATH"
+
+# Find globally installed composer apps.
+#PATH="$PATH:$HOME/.composer/vendor/bin"
 
 export PATH
 export FIGNORE=".svn"
