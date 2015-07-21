@@ -8,9 +8,20 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax enable
 
-" Load pathogen
-call pathogen#infect()
-call pathogen#helptags()
+" Load vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/ctrlp.vim'
+Plug 'powerline/powerline'
+Plug 'easymotion/vim-easymotion'
+
+Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
+Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
+
+Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
+
+call plug#end()
 
 " Remove all unwanted whitespaces on save
 autocmd BufWritePre * :%s/\r\+$//e " Windows newlines
@@ -126,8 +137,8 @@ nnoremap <Leader>q :q<CR>
 " Remove the record window
 nnoremap q: :q<CR>
 
-" Enter visual mode with <Space><Space>
-nmap <Leader><Leader> V
+" Start Vdebug
+nnoremap <F5> :VdebugStart<CR>
 
 let g:ctrlp_use_caching = 0
 if executable('ag')
@@ -159,6 +170,9 @@ let g:pdv_cfg_php4always = 0 " Turn of @access, etc
 
 " Configure vdebug to run on an available port
 let g:vdebug_options = { "port" : 11016 }
+
+" Set the codesniffer args
+let g:phpqa_codesniffer_args = "--standard=PSR2"
 
 " Set up write with sudo shortcut
 cmap w!! w !sudo tee > /dev/null %
