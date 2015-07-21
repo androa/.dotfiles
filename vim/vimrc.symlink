@@ -24,6 +24,8 @@ Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
 
 Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
+Plug 'sjl/gundo.vim'
+
 call plug#end()
 
 " Remove all unwanted whitespaces on save
@@ -142,6 +144,9 @@ nnoremap q: :q<CR>
 
 " Start Vdebug
 nnoremap <F5> :VdebugStart<CR>
+
+" Setup Gundo
+nnoremap <Leader><Leader>u :GundoToggle<CR>
 
 let g:ctrlp_use_caching = 0
 if executable('ag')
