@@ -1,2 +1,3 @@
 *.netrwhist
 vim/vim.symlink/plugged
+git/gitconfig.symlink
