@@ -16,6 +16,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'powerline/powerline'
 Plug 'easymotion/vim-easymotion'
 
+Plug 'tpope/vim-sleuth' " Indent autodetector
+Plug 'tpope/vim-surround' " Surround (parantheses, quotes, etc)
+
 Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
 Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
 
@@ -39,12 +42,12 @@ set autoindent
 set copyindent
 " Use spaces instead of tabs for indentation
 set expandtab
-" Use 4 spaces for indentation
-set shiftwidth=4
 " Round all indentations to multiple of shiftwidth
 set shiftround
+" Use 4 spaces for indentation
+"set shiftwidth=4
 " Set tabs to be equivalent to 4 spaces (fixes retab)
-set tabstop=4
+"set tabstop=4
 
 " Long lines handling
 set wrap
