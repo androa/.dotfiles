@@ -13,9 +13,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
-Plug 'powerline/powerline'
 Plug 'easymotion/vim-easymotion'
 
+Plug 'bling/vim-airline'
 Plug 'tpope/vim-sleuth' " Indent autodetector
 Plug 'tpope/vim-surround' " Surround (parantheses, quotes, etc)
 
@@ -27,6 +27,9 @@ Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 Plug 'sjl/gundo.vim'
 
 call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Remove all unwanted whitespaces on save
 autocmd BufWritePre * :%s/\r\+$//e " Windows newlines
