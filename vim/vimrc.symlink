@@ -151,6 +151,16 @@ nnoremap <F5> :VdebugStart<CR>
 " Setup Gundo
 nnoremap <Leader><Leader>u :GundoToggle<CR>
 
+" Shortkeys for handling buffers
+nmap <Leader>t :enew<CR>
+nmap <Leader>l :bnext<CR>
+nmap <Leader>h :bprevious<CR>
+nmap <Leader>bq :bp <BAR> bd #<CR> " Close buffer
+nmap <Leader>bl :ls<CR> " List buffers
+
+noremap <S-l> :bnext<CR>
+noremap <S-h> :bnext<CR>
+
 let g:ctrlp_use_caching = 0
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
