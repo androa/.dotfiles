@@ -1,1 +1,1 @@
-#export PATH=$PATH:./vendor/bin/
+export PATH=./vendor/bin/:$PATH
