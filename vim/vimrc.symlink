@@ -26,6 +26,8 @@ Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
 Plug 'sjl/gundo.vim'
 
+Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
+
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
