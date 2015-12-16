@@ -28,6 +28,8 @@ Plug 'sjl/gundo.vim'
 
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
 
+Plug 'junegunn/vim-easy-align' " Align lines on chars
+
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
@@ -152,6 +154,10 @@ nnoremap <F5> :VdebugStart<CR>
 
 " Setup Gundo
 nnoremap <Leader><Leader>u :GundoToggle<CR>
+
+" Setup EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Shortkeys for handling buffers
 nmap <Leader>t :enew<CR>
