@@ -22,18 +22,6 @@ export FIGNORE=".svn"
 export HISTCONTROL="erasedups"
 export TERM="xterm-256color"
 
-parse_git_branch () {
-  git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)# (\1)#'
-}
-parse_svn_branch() {
-  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " ("$1")" }'
-}
-parse_svn_url() {
-  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
-}
-parse_svn_repository_root() {
-  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
-}
 
 export PS1="\[\e[1;33m\]\u\[\e[1;0m\]@\[\e[1;32m\]\h\[\e[1;0m\]:\w\[\e[1;31m\]\$(parse_git_branch)\$(parse_svn_branch)\[\e[1;0m\]\$ "
 
