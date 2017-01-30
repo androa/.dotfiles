@@ -24,7 +24,7 @@ Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
 
 Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
-Plug 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
 
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
 
