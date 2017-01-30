@@ -2,7 +2,7 @@
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+  . ~/.bashrc
 fi
 
 # User specific environment and startup programs
@@ -21,9 +21,3 @@ export PATH
 export FIGNORE=".svn"
 export HISTCONTROL="erasedups"
 export TERM="xterm-256color"
-
-
-export PS1="\[\e[1;33m\]\u\[\e[1;0m\]@\[\e[1;32m\]\h\[\e[1;0m\]:\w\[\e[1;31m\]\$(parse_git_branch)\$(parse_svn_branch)\[\e[1;0m\]\$ "
-
-# Add tab completion for git/svn
-#source ~/.bash/svn_completion_remote_paths
