@@ -20,7 +20,7 @@ Plug 'tpope/vim-sleuth' " Indent autodetector
 Plug 'tpope/vim-surround' " Surround (parantheses, quotes, etc)
 
 Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
-Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
+" Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
 
 Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
