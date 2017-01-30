@@ -30,7 +30,7 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
 
 Plug 'junegunn/vim-easy-align' " Align lines on chars
 
-Plug 'scroolose/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
