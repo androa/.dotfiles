@@ -19,5 +19,18 @@ inoremap <C-D> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-D> :call PhpDocSingle()<CR>
 vnoremap <C-D> :call PhpDocRange()<CR>
 
+" Start Vdebug
+nnoremap <F5> :VdebugStart<CR>
+
 " Set debug port for Xdebug
 let g:debuggerPort = 11016
+
+" Configure PDV
+let g:pdv_cfg_Author = "André Roaldseth <andrer@vg.no>"
+let g:pdv_cfg_php4always = 0 " Turn of @access, etc
+
+" Configure vdebug to run on an available port
+let g:vdebug_options = { "port" : 11016 }
+
+" Set the codesniffer args
+let g:phpqa_codesniffer_args = "--standard=PSR2"
