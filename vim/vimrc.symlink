@@ -1,19 +1,12 @@
-" Enable filetype detection
-filetype on
-" Load plugin files for each filetype (.vim/after/ftplugin/*.vim)
-filetype plugin on
-" Load indent file for each filetype (.vim/after/indent/*.vim)
-filetype plugin indent on
-
-" Enable syntax highlighting
-syntax enable
-
+" Plugins {{{
 " Load vim-plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+
+Plug 'mileszs/ack.vim' " Use ack/ag directly
 
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sleuth' " Indent autodetector
@@ -24,117 +17,60 @@ Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
 
 Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
-" Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
 
 Plug 'junegunn/vim-easy-align' " Align lines on chars
 
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+
+Plug 'maralla/validator.vim'
 
 call plug#end()
+" }}}
+" Syntax {{{
+"
+" Enable filetype detection
+filetype on
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" Load plugin files for each filetype (.vim/after/ftplugin/*.vim)
+filetype plugin on
 
+" Load indent file for each filetype (.vim/after/indent/*.vim)
+filetype plugin indent on
+
+" Enable syntax highlighting
+syntax enable
+
+" }}}
+" Spaces & Tabs {{{
+" Indent the next line similiar to current line
+set autoindent
+
+" Use same indentation characters as current line
+set copyindent
+
+" Use spaces instead of tabs for indentation
+set expandtab
+
+" Round all indentations to multiple of shiftwidth
+set shiftround
+
+" Use 4 spaces for indentation
+"set shiftwidth=4
+"
+" Set tabs to be equivalent to 4 spaces (fixes retab)
+"set tabstop=4
+"
 " Remove all unwanted whitespaces on save
 autocmd BufWritePre * :%s/\r\+$//e " Windows newlines
 autocmd BufWritePre * :%s/\s\+$//e
+" }}}
+" Keybindings {{{
 
 " Rebind <leader>
 let mapleader = "\<Space>"
-
-" Turn on line numbers
-set relativenumber
-
-" Indent the next line similiar to current line
-set autoindent
-" Use same indentation characters as current line
-set copyindent
-" Use spaces instead of tabs for indentation
-set expandtab
-" Round all indentations to multiple of shiftwidth
-set shiftround
-" Use 4 spaces for indentation
-"set shiftwidth=4
-" Set tabs to be equivalent to 4 spaces (fixes retab)
-"set tabstop=4
-
-" Long lines handling
-set wrap
-set textwidth=80
-set formatoptions=qrn1t
-set colorcolumn=+1,+20
-
-" Display ruler with current possition
-set ruler
-
-" Display statusline
-set laststatus=2
-
-" Set how many lines that should be displayed above/under cursor
-set scrolloff=7
-
-" Show hidden unwanted characters
-set list
-set listchars=tab:►\ ,trail:·,nbsp:□
-
-" Hightlight paired brackets
-set showmatch
-
-" Highlight all matches for a search
-set hlsearch
-" Search as you type
-set incsearch
-" Replace all occurences on each line
-set gdefault
-" Only search case sensitive if a letter is uppercase
-set ignorecase
-set smartcase
-
-" Increase history and amount of undos to 1000
-set history=1000
-set undolevels=1000
-
-" Create undo files
-set undofile
-set undodir=$HOME/.vim/undo
-set undoreload=10000
-
-" Don't create backup or swap files
-set nobackup
-set noswapfile
-
-" Enable wildmenu (inline file explorer in command line)
-set wildmenu
-set wildmode=list:longest,full
-
-" Update window title with path to open file
-set title
-
-" Adjust bells to avoid sound, visual only
-set visualbell
-set noerrorbells
-
-" Map shift+h/shift+l for navigate between tabs
-map <S-h> gT
-map <S-l> gt
-
-" Allow opening of more files in tabs with -p
-set tabpagemax=50
-
-" Replace a word with last yanked text
-nmap <leader>r "_diwP
-
-" Toggle line numbers on/off
-map <leader>l :call ToggleLineNumberingStyle()<CR>
-function! ToggleLineNumberingStyle()
-    if &number
-        set relativenumber
-    else
-        set number
-    endif
-endfunction
 
 " Toggle paste mode
 map <leader>p :set invpaste<CR>
@@ -151,15 +87,86 @@ nnoremap <Leader>q :q<CR>
 " Remove the record window
 nnoremap q: :q<CR>
 
-" Start Vdebug
-nnoremap <F5> :VdebugStart<CR>
-
-" Setup Gundo
-nnoremap <Leader><Leader>u :GundoToggle<CR>
-
 " Setup EasyAlign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" Set up write with sudo shortcut
+cmap w!! w !sudo tee > /dev/null %
+
+" }}}
+" UI Layout {{{
+
+" Enable modeline
+set modeline
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" Turn on line numbers
+set relativenumber
+
+" Long lines handling
+set wrap
+set textwidth=80
+set formatoptions=qrn1t
+set colorcolumn=+1,+20
+
+" Enable cursorline
+set cursorline
+
+" Display ruler with current possition
+set ruler
+
+" Display statusline
+set laststatus=2
+
+" Set how many lines that should be displayed above/under cursor
+set scrolloff=7
+
+" Show hidden unwanted characters
+set list
+set listchars=tab:►\ ,trail:·,nbsp:□
+
+" Enable wildmenu (inline file explorer in command line)
+set wildmenu
+set wildmode=list:longest,full
+
+" Enable lazy redraw (more responsive)
+set lazyredraw
+
+" Update window title with path to open file
+set title
+
+" Adjust bells to avoid sound, visual only
+set visualbell
+set noerrorbells
+
+" }}}
+" Searching {{{
+"
+" Hightlight paired brackets
+set showmatch
+
+" Highlight all matches for a search
+set hlsearch
+
+" Search as you type
+set incsearch
+
+" Replace all occurences on each line
+set gdefault
+
+" Only search case sensitive if a letter is uppercase
+set ignorecase
+set smartcase
+
+" }}}
+" Navigation {{{
+"
+" Map shift+h/shift+l for navigate between tabs
+map <S-h> gT
+map <S-l> gt
 
 " Shortkeys for handling buffers
 nmap <Leader>t :enew<CR>
@@ -170,51 +177,66 @@ nmap <Leader>bl :ls<CR> " List buffers
 
 noremap <S-l> :bnext<CR>
 noremap <S-h> :bprevious<CR>
+" }}}
+" Undo {{{
+" Increase history and amount of undos to 1000
+set history=1000
 
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
+" Create undo files
+set undofile
+set undodir=$HOME/.vim/undo
+set undoreload=10000
+set undolevels=1000
 
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-                \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-                \ }
+" Setup Gundo
+nnoremap <Leader>u :GundoToggle<CR>
+if has('python3')
+  let g:gundo_prefer_python3 = 1
 endif
 
-" Configure solarized to 256 color terminal with dark background
-set background=dark
-set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-colorscheme solarized
+" Don't create backup or swap files
+set nobackup
+set noswapfile
+
+" }}}
+" Folding {{{
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+"}}}
+" CtrlP settings {{{
+let g:ctrlp_use_caching = 0
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
+
+" Use ag instead of ack if possible
+nnoremap <leader>a :Ack<space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
 
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>'],
     \ }
+" }}}
+" Solarized {{{
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+colorscheme solarized
+" }}}
 
-" Configure PDV
-let g:pdv_cfg_Author = "André Roaldseth <andrer@vg.no>"
-let g:pdv_cfg_php4always = 0 " Turn of @access, etc
-
-" Configure vdebug to run on an available port
-let g:vdebug_options = { "port" : 11016 }
-
-" Set the codesniffer args
-let g:phpqa_codesniffer_args = "--standard=PSR2"
-
-" Set up write with sudo shortcut
-cmap w!! w !sudo tee > /dev/null %
-
-
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+" vim:foldmethod=marker:foldlevel=0
