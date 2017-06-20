@@ -16,14 +16,22 @@ servers = (
   {
     address = "irc.vgnett.no";
     chatnet = "worknet";
-    port = "7171";
-    use_ssl = "no";
+    port = "9999";
+    use_ssl = "yes";
     ssl_verify = "no";
     autoconnect = "yes";
   },
   {
     address = "irc.freenode.net";
     chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.efnet.no";
+    chatnet = "EFNet";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
@@ -67,6 +75,7 @@ chatnets = {
   worknet = { type = "IRC"; };
   freenode = { type = "IRC"; };
   linpro = { type = "IRC"; };
+  slack = { type = "IRC"; nick = "Andre.Roaldseth"; };
 };
 
 channels = (
@@ -74,18 +83,14 @@ channels = (
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#nettby"; chatnet = "worknet"; autojoin = "yes"; },
   { name = "#vgmm"; chatnet = "worknet"; autojoin = "yes"; },
-  { name = "#vgf"; chatnet = "worknet"; autojoin = "yes"; },
   { name = "#nophp"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#vgf2"; chatnet = "worknet"; autojoin = "yes"; },
   { name = "#varnish"; chatnet = "linpro"; autojoin = "yes"; },
-  { name = "#phoenix"; chatnet = "worknet"; autojoin = "yes"; },
   { name = "#vgdrift"; chatnet = "worknet"; autojoin = "yes"; },
-  { name = "#zftalk"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#imbo"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vgeng"; chatnet = "worknet"; autojoin = "yes"; },
-  { name = "#phpdocumentor"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#techshock"; chatnet = "worknet"; autojoin = "yes"; },
-  { name = "#vinland"; chatnet = "worknet"; autojoin = "yes"; }
+  { name = "scene.no"; chatnet = "efnet"; autojoin = "yes"; },
+  { name = "#MegaHAL"; chatnet = "efnet"; autojoin = "yes"; },
+  { name = "#vev"; chatnet = "efnet"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -158,7 +163,6 @@ aliases = {
   say = "msg *";
   gifflip = "say http://i.imgur.com/diNql.gif";
   dance = "say \\\\o\\\\ |o| /o/";
-  office = "say http://i.imgur.com/dWAOONi.gif";
   mindblown = "say http://i.imgur.com/b3mWa.gif";
   dick = "say http://i.imgur.com/L8x8kte.gif";
   nothing = "say http://i.qkme.me/3tdxrb.jpg";
@@ -166,7 +170,7 @@ aliases = {
   letmesee = "say http://i.imgur.com/f9EoWZj.gif";
   apetornado = "say http://i.imgur.com/NXfLcSo.gif";
   gonbgud = "say http://i.imgur.com/k095gSa.gif";
-  nofucks = "say http://i.imgur.com/3PFZ1i5.gif";
+  nofucks = "say http://i.imgur.com/ulAAWAn.gif";
   shock = "say http://i.imgur.com/rnNQIW0.gif";
   yes = "say http://i.imgur.com/zoTX8Ir.gif";
   doghouse = "say http://i.imgur.com/r2aivqm.gif";
@@ -196,12 +200,12 @@ aliases = {
   epicrage = "say http://i.imgur.com/Sxq8K3j.gif";
   65wat = "say http://i.imgur.com/xdnN29Q.jpg";
   nomemory = "say http://i.imgur.com/iw4YuOi.gif";
-  pileofshit = "say http://i.imgur.com/ny3QTwE.gif";
+  pileofshit = "say http://i.imgur.com/mdHEFSW.gif";
   notsure = "say http://i.imgur.com/7vZWWC1.gif";
   checkfacts = "say http://i.imgur.com/ZOXsAT9.gif";
   error = "say http://i.imgur.com/Zrp59U7.gif";
   thefuck = "say http://i.imgur.com/maYcZvx.gif";
-  "day@vg" = "say http://i.imgur.com/pVXQNl7.gif";
+  "day@vg" = "say http://i.imgur.com/xBQOzc4.gif";
   didntread = "say http://i.imgur.com/NT6AcRI.gif";
   whathaveidone = "say http://i.imgur.com/VHAxOh3.gif";
   party = "say ส็็็็็็็็็็็็็็็็็็็็็็็็็༼ ຈل͜ຈ༽ส้้้้้้้้้้้้้้้้้้้้้้้";
@@ -245,6 +249,64 @@ aliases = {
   imout2 = "say http://i.imgur.com/utIFmyl.gif";
   huehuehuehue = "say http://i.imgur.com/CmEog81.jpg";
   phew = "say http://i.imgur.com/ILjgUyi.gif";
+  thanks = "say http://i.imgur.com/TsysKvB.gif";
+  warning = "say http://i.imgur.com/BvMxEjP.jpg";
+  smile = "say http://i.imgur.com/1DfEDvJ.png";
+  no = "say http://i.imgur.com/L5EXNrX.gif";
+  terrific = "say http://i.imgur.com/qN2qdWC.gif";
+  buttwiggle = "say http://imgur.com/gallery/xBrHq";
+  badass = "say http://i.imgur.com/6goxuCc.gif";
+  pussy = "say http://i.imgur.com/A1lUy2H.gif";
+  maniac = "say http://i.imgur.com/J6aq6MM.gif";
+  ohyes = "say http://i.imgur.com/lxxd1dQ.gif";
+  couldntresist = "say http://i.imgur.com/sn8eZ0p.gif";
+  dontbelieveyou = "say http://i.imgur.com/r1LSEHs.gif";
+  nofucksice = "say http://i.imgur.com/m1KER9v.gif";
+  superhappy = "say http://i.imgur.com/dGft1QU.gif";
+  alright = "say https://www.youtube.com/watch?v=8qMtsir0l9k";
+  crying = "say http://i.imgur.com/Iaul0Mg.gif";
+  madeitup = "say http://i.imgur.com/Wm3W5S6.gif";
+  getout = "say http://i.imgur.com/IpchJqU.gif";
+  people = "say http://i.imgur.com/RKTViUi.gif";
+  ifuckedup = "say http://i.imgur.com/ZCRXIWB.gif";
+  imout3 = "say http://i.imgur.com/S0MxvFq.gif";
+  funny = "say http://i.imgur.com/J8Xf6GE.gif";
+  heavybreathing = "say http://i.imgur.com/dhoyfz9.jpg";
+  sickgifs = "say http://i.imgur.com/MS9ZPDR.gif";
+  didthemath = "say http://i.imgur.com/KhHGWzs.jpg";
+  hug = "say http://i.imgur.com/kf9HYCm.gif";
+  knowmanythings = "say http://25.media.tumblr.com/tumblr_m99z02IeGc1r5md7mo3_500.gif";
+  actnormal = "say http://i.imgur.com/oHOkxmp.gif";
+  shitrun = "say http://i.imgur.com/LCZzT5y.gif";
+  zerofucks = "say http://i.imgur.com/JgD90jw.png";
+  theoffice = "say http://gunshowcomic.com/comics/20130109.png";
+  uncivil = "say http://i.imgur.com/vVgNrfF.gif";
+  fuckyeah = "say http://i.imgur.com/8F8k3sQ.gif";
+  once = "say http://i.imgur.com/vKn0he9.gif";
+  iseewhat = "say http://i.imgur.com/atLj5b0.jpg";
+  nosense = "say http://i.imgur.com/DQPgSED.jpg";
+  clusterfuck = "say http://i.imgur.com/BSA9W8J.gif";
+  fuckisgone = "say http://i.imgur.com/Y4G8SyQ.jpg";
+  almostgave2 = "say http://i.imgur.com/ErhMrfJ.gif";
+  awyiss = "say http://s8.postimg.org/9koytdf51/image.jpg";
+  sense = "say http://i.imgur.com/xvODbd3.gif";
+  freesoftware = "say http://i.imgur.com/ZiLmnoj.jpg";
+  brilliant = "say http://i.imgur.com/Gb66UHb.jpg";
+  attentionwhore = "say http://i.imgur.com/SGDAVDE.gif";
+  huehueplane = "say http://i.imgur.com/oJjAVsK.png";
+  thecatking = "say http://i.imgur.com/6w3IkVS.jpg";
+  faint = "say http://i.imgur.com/kczcX.gif";
+  gurl = "say http://i.imgur.com//NmzlSPR.gif";
+  waiting = "say http://i.imgur.com/QXJoXwx.gif";
+  doit = "say http://i0.kym-cdn.com/photos/images/newsfeed/000/977/020/03b.gif";
+  hattejustering = "say http://i.imgur.com/5WW1uOK.gifv";
+  closetoloosingmyshit = "say http://i.imgur.com/wAmKK6K.jpg";
+  burningfat = "say http://i.imgur.com/C5zmDyO.gif";
+  thereitis = "say http://i.imgur.com/RG0BS1U.gif";
+  shm = "say http://i.imgur.com/eAmYBfp.gif";
+  smh = "say t this new dependency system makes it possible to generate exact information about what Roc provides for project developers, something that is not the case with the current version.";
+  magic = "say http://i.imgur.com/iZcUNxH.gifv";
+  haveameme = "say http://i.imgur.com/Y0qwM8D.jpg";
 };
 
 statusbar = {
@@ -275,9 +337,11 @@ statusbar = {
     topic_empty = " Irssi v$J - http://irssi.org/help/";
 
     # all of these treated specially, they're only displayed when needed
-    lag = "{sb Lag: $0-}";
+    lag = "{sb Lag: %m$0-%n}";
     act = "{sb Act: $0-}";
-    more = "-- more --";
+    more = "%k%3-- more --%n";
+
+    # solarized
   };
 
   # there's two type of statusbars. root statusbars are either at the top
@@ -369,6 +433,8 @@ settings = {
     beep_when_away = "yes";
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
+    theme = "solarized-universal";
+    hilight_color = "= %R";
   };
   "fe-text" = {
     actlist_sort = "refnum";
@@ -382,7 +448,11 @@ settings = {
   };
 };
 logs = { };
-ignores = ( { mask = "testkosebot"; level = "ALL"; } );
+ignores = (
+  { mask = "testkosebot"; level = "ALL"; },
+  { mask = "ops"; level = "MSGS"; },
+  { level = "MODES"; servertag = "slack"; }
+);
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = {
