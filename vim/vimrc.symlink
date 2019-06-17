@@ -15,7 +15,7 @@ Plug 'tpope/vim-surround' " Surround (parantheses, quotes, etc)
 Plug 'tpope/vim-fugitive' " Git Awesomesauce Plugin
 " Plug 'scrooloose/nerdcommenter' " Orgasmic commenting
 
-Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
+"Plug 'joonty/vdebug', { 'on': 'VdebugStart' } " GDB debugger
 
 Plug 'sjl/gundo.vim'
 
@@ -23,11 +23,27 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' } " Markdown Syntax
 
 Plug 'junegunn/vim-easy-align' " Align lines on chars
 
+Plug 'christoomey/vim-tmux-navigator'
+
 "Plug 'vim-syntastic/syntastic'
 
-Plug 'maralla/validator.vim'
+" codefmt is a utility for syntax-aware code formatting
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+
+"Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+
+Plug 'udalov/kotlin-vim'
+
+Plug 'maralla/validator.vim'
 call plug#end()
+
+call glaive#Install()
 " }}}
 " Syntax {{{
 "

@@ -1,3 +1,4 @@
-set noexpandtab
-let tabstop=8
-let shiftwidth=8
+setlocal noexpandtab
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal softtabstop=4

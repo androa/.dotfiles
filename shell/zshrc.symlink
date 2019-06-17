@@ -46,7 +46,14 @@ ZSH_CUSTOM=$HOME/.dotfiles/shell/zsh-custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast docker docker-compose aws tmux kubectl)
+plugins=(
+  gitfast
+  docker
+  docker-compose
+  kubectl
+  vi-mode
+
+)
 
 # User configuration
 
@@ -80,8 +87,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-#export NVM_DIR="/home/andrer/.nvm"
+#export NVM_DIR=~/.nvm
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#. "/usr/local/opt/nvm/nvm.sh"
 
 alias q=kubectl
 alias dc=docker-compose
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
