@@ -1,3 +1,7 @@
+" Set up UTF-8 encoding {{{
+scriptencoding utf-8
+set encoding=utf-8
+" }}}
 " Plugins {{{
 " Load vim-plug
 call plug#begin('~/.vim/plugged')
