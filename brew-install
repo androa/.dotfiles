@@ -2,8 +2,6 @@ ack
 ansible
 git
 git-secret
-google-java-format
-gradle
 htop
 httpie
 jenv
@@ -12,7 +10,6 @@ kafkacat
 ktlint
 kube-ps1
 kubectx
-maven
 mosh
 mtr
 nmap

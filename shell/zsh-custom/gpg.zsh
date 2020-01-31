@@ -1,4 +1,4 @@
 #export GPG_TTY=$(tty)
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 #gpgconf --launch gpg-agent
-eval $(gpg-agent --daemon --enable-ssh-support)
+#eval $(gpg-agent --daemon --enable-ssh-support)
