@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -47,17 +49,17 @@ ZSH_CUSTOM=$HOME/.dotfiles/shell/zsh-custom/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  autoenv
+  #autoenv
+  #dotenv
+  #zsh-autosuggestions
   docker
   docker-compose
-  dotenv
   gitfast
   gpg-agent
+  jenv
   kubectl
-  pyenv
+  nvm
   vi-mode
-  virtualenv
-  zsh-autosuggestions
 )
 
 # User configuration
@@ -98,8 +100,6 @@ export LANG=en_US.UTF-8
 
 alias dc=docker-compose
 
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-
 export PS1='$(kube_ps1)'$PS1
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -107,6 +107,3 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-source /Users/andreroaldseth/Library/Preferences/org.dystroy.broot/launcher/bash/br
