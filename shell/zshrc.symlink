@@ -51,15 +51,16 @@ ZSH_CUSTOM=$HOME/.dotfiles/shell/zsh-custom/
 plugins=(
   #autoenv
   #dotenv
-  #zsh-autosuggestions
   docker
   docker-compose
   gitfast
   gpg-agent
   jenv
+  kube-ps1
   kubectl
   nvm
   vi-mode
+  zsh-autosuggestions
 )
 
 # User configuration
@@ -99,8 +100,6 @@ export LANG=en_US.UTF-8
 #. "/usr/local/opt/nvm/nvm.sh"
 
 alias dc=docker-compose
-
-export PS1='$(kube_ps1)'$PS1
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
